@@ -1,6 +1,6 @@
 <?php
 include('connsp.php');
-
+session_start();
 if(isset($_REQUEST['submit']))
 {
 	$user = $_REQUEST['user'];
@@ -11,8 +11,14 @@ if(isset($_REQUEST['submit']))
  	$confirm_pass = $_REQUEST['confirm_pass']; 	 	
     $bloodg=$_REQUEST['bloodg'];
     $address = $_REQUEST['address'];
-   
-    
+   	$_SESSION['user']=$user;
+    if(!$_SESSION['user']){
+		?> 
+		<script type="text/javascript">
+		alert('not doing insert success'); 
+		</script>
+		<?php
+	}
     if($confirm_pass==$pass)
     {
     
@@ -22,9 +28,11 @@ if(isset($_REQUEST['submit']))
 		$res=$connsp->query($ins);
 		if($res)
 		{
+			$_SESSION['user']=$user;
 			?> 
 			<script type="text/javascript">
 				alert('insert success'); 
+				
 				window.location="student_profile.php"; //here wrtite the name of the student profile file that you make
 			</script>
 			<?php
