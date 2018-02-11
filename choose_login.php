@@ -25,12 +25,18 @@
 function back(){
     window.location="mainpage.php";
   }
-  function Teacher(){
+  function SignInTeacher(){
     window.location="teacher_login.php";
   }
   
- function student(){
+ function SignInStudent(){
   window.location="student_login.php";
+ }
+ function SignUpTeacher(){
+ 	window.location="signup_wieteacher.php";
+ }
+ function SignUpStudent(){
+ 	window.location = "signup_student.php";
  }
 </script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -39,13 +45,22 @@ function back(){
 <body style="background-color:white; color:white">  
 <div class="second" "><button class="btn btn-success" onclick="back()" type="button">Back</button></div>
 <br>
-<button type="button" onclick="Teacher()" 
+<button type="button" onclick="SignInTeacher()" 
 style="background-color:white; padding: 25px 35px;font-size: 25px;border:solid;display:block;background-color: black;">
-Teacher</button> 
+Teacher Sign In</button> 
 
-<button type="button" onclick="student()" 
+<button type="button" onclick="SignInStudent()" 
 style="background-color:white; padding: 25px 35px;font-size: 25px;border:solid;display:block;background-color: black;">
-Student</button> 
+Student Sign In</button> 
+
+
+<button type="button" onclick="SignUpTeacher()" 
+style="background-color:white; padding: 25px 35px;font-size: 25px;border:solid;display:block;background-color: black;">
+Teacher Sign Up</button> 
+
+<button type="button" onclick="SignUpStudent()" 
+style="background-color:white; padding: 25px 35px;font-size: 25px;border:solid;display:block;background-color: black;">
+Student Sign Up</button> 
 
 </body>
 </html>
