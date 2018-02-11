@@ -1,6 +1,6 @@
 <?php
 include('connsp.php');
-
+session_start();
 if(isset($_REQUEST['submit']))
 {
 	$user = $_REQUEST['user'];
@@ -11,7 +11,7 @@ if(isset($_REQUEST['submit']))
  	$confirm_pass = $_REQUEST['confirm_pass']; 	 	
     $bloodg=$_REQUEST['bloodg'];
     $address = $_REQUEST['address'];
-   
+   	$_SESSION['user'] = $user;
     
     if($confirm_pass==$pass)
     {
