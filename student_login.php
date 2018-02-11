@@ -13,12 +13,12 @@ if(isset($_REQUEST['login']))  //name
 	$chk=$res->num_rows; // mysql function.
 		if($chk==1)  //IF INSERT get success then ...
 	{
-		$_SESSION['unm']=$user;
+		$_SESSION['user']=$user;
 	
 		?> 
 		<script type="text/javascript">
 			alert('login success');
-			window.location="teacher_profile.php";
+			window.location="student_profile.php";
 
 		</script>
 	
